@@ -34,8 +34,8 @@ function Form() {
     }
 
     return (
-        <form className='py-5' onSubmit={handleSubmit}>
-            <div className="header">
+        <form onSubmit={handleSubmit}>
+            <div className="header pt-3">
                 <h1 className='py-2'>Contact Me</h1>
                 <p className='pb-4'>Hi there, contact me to ask me about anything you have in mind.</p>
             </div>
@@ -54,6 +54,7 @@ function Form() {
                     />
                     {formError && formData.firstName == "" ? <small className='error'>Please enter your First Name</small> : ''}
                 </div>
+
                 {/* Last Name input */}
                 <div className='col-md mb-3'>
                     <label htmlFor="last_name" className="form-label">Last Name</label>
@@ -69,6 +70,7 @@ function Form() {
                     {formError && formData.lastName == "" ? <small className='error'>Please enter your Last Name</small> : ''}
                 </div>
             </div>
+
             {/* Email input */}
             <div className="mb-3">
                 <label htmlFor="email" className="form-label">Email address</label>
@@ -83,6 +85,7 @@ function Form() {
                 />
                 {formError && formData.email == "" ? <small className='error'>Please enter your Email</small> : ''}
             </div>
+
             {/* Message input */}
             <div className="form-outline mb-4">
                 <label className="form-label" htmlFor="form4Example3">Message</label>
@@ -97,6 +100,7 @@ function Form() {
                 />
                 {formError && formData.textarea =="" ? <small className='error'>Please enter your Message</small> : ''}
             </div>
+
             {/* checkbox */}
             <div className="mb-5 form-check">
                 <input 
@@ -110,8 +114,10 @@ function Form() {
                 <label className="form-check-label checkbox" htmlFor="checkbox">You agree to providing your data to {name} who may contact you.</label>
                 {formError && formData.checked =="" ? <small className='error'>Please tick the box to continue</small> : ''}
             </div>
-            <div className='d-grid mb-4'>
-                <button type="submit" className="btn btn-primary" id="btn__submit">Send message</button>
+
+            {/* Submit Button */}
+            <div className='d-grid mb-5 pb-5'>
+                <button type="submit" className="btn btn-primary mb-5" id="btn__submit">Send message</button>
             </div>
         </form>
     )
