@@ -1,0 +1,50 @@
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+#profile__img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+}
+
+#twitter {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.share__icons {
+  height: 0;
+}
+
+.desk-icon {
+  position: relative;
+  top: 10px;
+  left: 80%;
+}
+
+.btn__link {
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  background-color: #EAECF0;
+  font-size: 18px;
+  padding: 24px 32px;
+  border-radius: 8px;
+}
+
+footer > div > img, footer > div > p  {
+  width: fit-content;
+  padding: 12px 0;
+}
+
+@media (max-width: 570px) {
+  .btn__link, footer > div > p  {
+    font-size: 14px;
+  }
+
+  footer > div {
+    flex-direction: column;
+  }
+}
