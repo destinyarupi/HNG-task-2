@@ -13,8 +13,6 @@ function Form() {
         checked: false
     })
 
-    const [formError, setFormError] = useState (false)
-
     const handleChange = event => {
         const {name, value, type, checked} = event.target
         setFormData ( prevState => {
@@ -27,10 +25,7 @@ function Form() {
 
     const handleSubmit = event => {
         event.preventDefault();
-        const {firstName, lastName, email, textarea, checked} = formData
-        if (firstName == "" && lastName == "" && email == ""  && textarea == "" && checked === false) {
-            setFormError(true)
-        }
+        console.log(formData);
     }
 
     return (
@@ -51,8 +46,8 @@ function Form() {
                         name='firstName'
                         value={formData.firstName}
                         onChange={handleChange}
+                        required
                     />
-                    {formError && formData.firstName == "" ? <small className='error'>Please enter your First Name</small> : ''}
                 </div>
 
                 {/* Last Name input */}
@@ -66,8 +61,8 @@ function Form() {
                         name='lastName'
                         value={formData.lastName}
                         onChange={handleChange}
+                        required
                     />
-                    {formError && formData.lastName == "" ? <small className='error'>Please enter your Last Name</small> : ''}
                 </div>
             </div>
 
@@ -82,8 +77,8 @@ function Form() {
                     name='email'
                     value={formData.email}
                     onChange={handleChange}
+                    required
                 />
-                {formError && formData.email == "" ? <small className='error'>Please enter your Email</small> : ''}
             </div>
 
             {/* Message input */}
@@ -97,8 +92,8 @@ function Form() {
                     name='textarea'
                     value={formData.textarea}
                     onChange={handleChange}
+                    required
                 />
-                {formError && formData.textarea =="" ? <small className='error'>Please enter your Message</small> : ''}
             </div>
 
             {/* checkbox */}
@@ -110,9 +105,9 @@ function Form() {
                     name='checked'
                     checked={formData.checked}
                     onChange={handleChange}
+                    required
                 />
                 <label className="form-check-label checkbox" htmlFor="checkbox">You agree to providing your data to {name} who may contact you.</label>
-                {formError && formData.checked =="" ? <small className='error'>Please tick the box to continue</small> : ''}
             </div>
 
             {/* Submit Button */}
