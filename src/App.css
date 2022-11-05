@@ -34,14 +34,58 @@
   border-radius: 8px;
 }
 
+form {
+  width: 75%;
+  margin: auto;
+}
+
+.header > h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.header > p {
+  font-size: 20px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+textarea {
+  resize: none !important;
+  height: 132px
+
+}
+
+.checkbox {
+  font-size: 16px;
+}
+
 footer > div > img, footer > div > p  {
   width: fit-content;
   padding: 12px 0;
 }
 
-@media (max-width: 570px) {
+.error {
+  color: rgb(211, 28, 28);
+  display: block;
+  padding-top: 5px;
+}
+
+@media (max-width: 768px) {
   .btn__link, footer > div > p  {
     font-size: 14px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  .header > p {
+    font-size: 18px;
   }
 
   footer > div {
